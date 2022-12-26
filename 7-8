@@ -1,0 +1,276 @@
+var
+s,s_old,s_new: string;
+i,l_old,p: byte;
+begin 
+
+
+write('Исходная строка: '); 
+readln(s);
+s_old:='word';
+l_old := length(s_old);
+s_new:= 'letter';
+while pos(s_old,s)>0 do
+ begin
+  p:=pos(s_old,s);
+  delete(s,p,4);
+  insert(s_new,s,p);
+ end;
+ write(s);
+end.
+var
+s,s_old,s_new: string;
+i,l_old,p,k: byte;
+begin 
+
+k:=0;
+write('Исходная строка: '); 
+readln(s);
+s_old:='aba';
+l_old := length(s_old);
+
+while pos(s_old,s)>0 do
+ begin
+  p:=pos(s_old,s);
+  delete(s,p,3);
+  k+=1;
+ end;
+ write('Количество вхождений: ',k);
+end.
+var
+s,s_old,s_new: string;
+i,l_old,p: byte;
+begin 
+
+
+write('Исходная строка: '); 
+readln(s);
+s_old:='Nikolay';
+l_old := length(s_old);
+s_new:= 'Oleg';
+while pos(s_old,s)>0 do
+ begin
+  p:=pos(s_old,s);
+  
+  delete(s,p,7);
+  insert(s_new,s,p);
+ end;
+ write(s);
+end.
+var
+s,s_old,s_new: string;
+i,l_old: byte;
+begin
+write('Исходная строка: '); // я изучаю Turbo Pascal
+readln(s);
+write(s, ',');
+write(s, ',');
+writeln(s);
+writeln(length(s)*3+2)
+end.
+var s:string; l:integer;
+begin
+write('Введите строку: ');
+readln(s);
+writeln('Первый символ: ',s[1]);
+l:=length(s);
+if l mod 2 = 1 then 
+   begin
+   writeln('Средний символ: ',s[l div 2+1]);
+end;
+writeln('Последний символ: ',s[l]);
+end.
+var s:string; l:integer;
+begin
+write('Введите строку: ');
+readln(s);
+l:=length(s);
+if l > 6 then
+begin
+  write(s[1],s[2],s[3],s[l],s[l-1],s[l-2])
+end
+else
+  writeln(s[1]*l)
+end.
+begin
+var
+s,s_old,s_new: string;
+var l_old, l, p,o: byte;
+print('Исходная строка: '); // я изучаю Turbo Pascal
+readstring(s);
+l:=length(s);
+s_old:= s[l];
+p:=0;
+for var i:=1 to l do
+begin
+  if s[i] = s_old then
+    o+=1;
+end; 
+for var i:=1 to o-1 do
+begin
+  var k: integer;
+  k := pos(s_old,s);
+  delete(s,k,1);
+  print(k+p);
+  p+=1
+end; 
+end.
+begin
+var
+s,s_old,s_new: string;
+var s:string; l,k,i:integer;
+begin
+write('Введите строку: ');
+readln(s);
+k:=3;
+for i:=1  to length(s) div 3 do
+begin
+  writeln(s[k]);
+  k+=3;
+  
+end;
+end.
+var
+  s, s_old, s_new: string;
+  l_old, l, k, p, o: byte;
+
+begin
+  write('Исходная строка: '); // я изучаю Turbo Pascal
+  readln(s);
+  l := length(s);
+  s_old := '+';
+  p := 0;
+  for var i := 1 to l do
+  begin
+    if s[i] = s_old then
+      o += 1;
+  end;
+  writeln(o, 'плюсов');
+  o := 0;
+  s_old := '-';
+  for var i := 1 to l do
+  begin
+    if s[i] = s_old then
+      o += 1;
+  end;
+  writeln(o, 'минусов');
+  o := 0;
+  s_old := '0';
+  for var i := 1 to l do
+  begin
+    if s[i] = s_old then
+      o += 1;
+  end;
+  writeln(o, 'нулей');
+end.
+var
+s,s_old,s_new: string;
+i,l_old, l, k,p,o: byte;
+begin
+write('Исходная строка: '); // я изучаю Turbo Pascal
+readln(s);
+p:=0;
+l:=length(s);
+for i:=1 to l do
+begin
+  if (s[i] = 'x') or (s[i] = 'X') then
+    begin
+    writeln('Первым встретили x');
+    p+=1;
+    break
+  end;
+  if (s[i] = 'w') or (s[i] = 'W') then
+    begin
+    writeln('Первым встретили w');
+    p+=1;
+    break
+  end;
+  end;
+if p=0 then
+  writeln('В тексте нет ни x, ни w.')
+end.
+var s,s1:string; l,l1,k,i:integer;
+begin
+write('Введите 2 строки: ');
+readln(s);
+readln(s1);
+l:=length(s);
+l1:=length(s1);
+if l>l1 then
+  writeln(s*(l - l1))
+else
+  writeln(s1*(l1-l))
+end.
+var
+s,s_old,s_new,we: string;
+i,l_old,l: byte;
+begin
+write('Исходная строка: '); 
+readln(s);
+l:=length(s);
+s_old:='abc';
+s_new:='www';
+we:=s[1]+s[2]+s[3];
+if we = s_old then
+  begin
+  l_old := length(s_old);
+  i := pos(s_old,s);
+  delete(s,i,l_old);
+  insert(s_new,s,i);
+  end
+else
+ insert('zzz',s,l+1); 
+writeln(s); 
+end.
+var s:string; l,l1,k,i:integer;
+begin
+write('Введите строку: ');
+readln(s);
+
+l:=length(s);
+
+if l>10 then
+begin
+  while l >6 do
+    begin
+  delete(s,l,1);
+  l:=length(s);
+  end;
+  writeln(s)
+  end
+else
+  begin
+  while l<12 do
+    begin
+    s:=s+'o';
+    l+=1;
+    end;
+    write(s);
+    end;
+end.
+var s:string; l,k,i:integer;
+begin
+write('Введите строку: ');
+readln(s);
+    k := 0;
+    for i:=1 to Length(s) do 
+      begin
+        if (s[i]>='0')and(s[i]<='9') then 
+          inc(k);
+    end;
+    writeln('всего цифр:',k);
+end.
+var s:string; l,k,i:integer;
+begin
+write('Введите строку: ');
+readln(s);
+    k := 0;
+    for i:=1 to Length(s) do 
+      begin
+        if (s[i]='a')or(s[i]<='b')or(s[i]<='c')then 
+          inc(k);
+    end;
+    if k<Length(s) then
+     write('строка не содержит')
+    else
+    writeln('строка содержит');
+end.
